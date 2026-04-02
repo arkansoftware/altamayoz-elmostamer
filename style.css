@@ -346,26 +346,8 @@ section { padding: 90px 0; }
 /* =============================================
    HERO SECTION
    ============================================= */
-.hero {
-    min-height: 100vh;
-    background: var(--gradient-hero);
-    padding-top: calc(var(--header-h) + 60px);
-    padding-bottom: 80px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    align-items: center;
-    gap: 60px;
-    padding-inline: 5%;
-    max-width: 1300px;
-    margin: 0 auto;
-    position: relative;
-    overflow: visible;
-}
-
 /* Full-width hero background */
 #home {
-    position: relative;
-    background: var(--gradient-hero);
     overflow: hidden;
 }
 
@@ -373,13 +355,13 @@ section { padding: 90px 0; }
     position: relative;
     z-index: 1;
     min-height: 100vh;
+    background: var(--gradient-hero);
     display: grid;
     grid-template-columns: 1fr 400px;
     align-items: center;
     gap: 60px;
-    padding: calc(var(--header-h) + 60px) 5% 80px;
-    max-width: 1300px;
-    margin: 0 auto;
+    /* Center content on wide screens without capping the section width */
+    padding: calc(var(--header-h) + 60px) max(5%, calc((100% - 1300px) / 2)) 80px;
 }
 
 /* Hero Bg Shapes */
