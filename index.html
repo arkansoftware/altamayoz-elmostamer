@@ -101,28 +101,28 @@
     class="min-h-screen bg-slate-50 text-slate-700 font-arabic overflow-x-hidden selection:bg-blue-500 selection:text-white transition-colors duration-300">
 
     <!-- --- Navbar --- -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-blue-600 shadow-md py-4">
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
             <!-- Logo -->
             <div class="flex items-center">
-                <img src="logo.png" alt="Logo" class="h-10 md:h-14 object-contain" />
+                <img src="logo.png" alt="Logo" class="h-10 md:h-14 object-contain brightness-0 invert" />
             </div>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
-                <ul class="flex items-center gap-8 font-semibold text-slate-600">
-                    <li><a href="#home" data-i18n="nav_home" class="hover:text-blue-600 transition-colors">الرئيسية</a>
+                <ul class="flex items-center gap-8 font-semibold text-blue-50">
+                    <li><a href="#home" data-i18n="nav_home" class="hover:text-white transition-colors">الرئيسية</a>
                     </li>
-                    <li><a href="#about" data-i18n="nav_about" class="hover:text-blue-600 transition-colors">من نحن</a>
+                    <li><a href="#about" data-i18n="nav_about" class="hover:text-white transition-colors">من نحن</a>
                     </li>
                     <li><a href="#products" data-i18n="nav_products"
-                            class="hover:text-blue-600 transition-colors">خدماتنا</a></li>
-                    <li><a href="#contact" data-i18n="nav_contact" class="hover:text-blue-600 transition-colors">اتصل
+                            class="hover:text-white transition-colors">خدماتنا</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact" class="hover:text-white transition-colors">اتصل
                             بنا</a></li>
                 </ul>
                 <button onclick="toggleLanguage()"
-                    class="flex items-center gap-2 bg-white shadow-sm hover:bg-blue-50 border border-slate-200 hover:border-blue-500/50 text-slate-900 px-4 py-2 rounded-full transition-all font-medium">
-                    <i data-lucide="globe" class="w-4 h-4 text-blue-600"></i>
+                    class="flex items-center gap-2 bg-blue-700/50 hover:bg-blue-700 border border-blue-500/50 text-white px-4 py-2 rounded-full transition-all font-medium">
+                    <i data-lucide="globe" class="w-4 h-4 text-white"></i>
                     <span data-i18n="lang_btn">English</span>
                 </button>
             </div>
@@ -130,10 +130,10 @@
             <!-- Mobile Menu Button -->
             <div class="md:hidden flex items-center gap-4">
                 <button onclick="toggleLanguage()"
-                    class="p-2 bg-white shadow-sm border border-slate-200 rounded-full text-slate-900 hover:bg-blue-50 transition-colors">
-                    <i data-lucide="globe" class="w-5 h-5 text-blue-600"></i>
+                    class="p-2 bg-blue-700/50 border border-blue-500/50 rounded-full text-white hover:bg-blue-700 transition-colors">
+                    <i data-lucide="globe" class="w-5 h-5 text-white"></i>
                 </button>
-                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-900 focus:outline-none p-2">
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-white focus:outline-none p-2">
                     <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
                     <i id="icon-close" data-lucide="x" class="w-7 h-7 hidden"></i>
                 </button>
@@ -142,15 +142,15 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-slate-200 flex flex-col py-4 px-6 space-y-4 font-semibold text-slate-600">
+            class="hidden md:hidden absolute top-full left-0 w-full bg-blue-600 shadow-2xl border-t border-blue-500 flex flex-col py-4 px-6 space-y-4 font-semibold text-blue-50">
             <a href="#home" data-i18n="nav_home" onclick="toggleMobileMenu()"
-                class="block hover:text-blue-600">الرئيسية</a>
-            <a href="#about" data-i18n="nav_about" onclick="toggleMobileMenu()" class="block hover:text-blue-600">من
+                class="block hover:text-white">الرئيسية</a>
+            <a href="#about" data-i18n="nav_about" onclick="toggleMobileMenu()" class="block hover:text-white">من
                 نحن</a>
             <a href="#products" data-i18n="nav_products" onclick="toggleMobileMenu()"
-                class="block hover:text-blue-600">خدماتنا</a>
+                class="block hover:text-white">خدماتنا</a>
             <a href="#contact" data-i18n="nav_contact" onclick="toggleMobileMenu()"
-                class="block hover:text-blue-600">اتصل بنا</a>
+                class="block hover:text-white">اتصل بنا</a>
         </div>
     </nav>
 
@@ -520,11 +520,11 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-lg', 'shadow-blue-900/5', 'py-3');
-                nav.classList.remove('bg-transparent', 'py-5');
+                nav.classList.add('py-2', 'bg-blue-600/95', 'backdrop-blur-md');
+                nav.classList.remove('py-4', 'bg-blue-600');
             } else {
-                nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-lg', 'shadow-blue-900/5', 'py-3');
-                nav.classList.add('bg-transparent', 'py-5');
+                nav.classList.remove('py-2', 'bg-blue-600/95', 'backdrop-blur-md');
+                nav.classList.add('py-4', 'bg-blue-600');
             }
         });
 
